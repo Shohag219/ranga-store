@@ -18,10 +18,10 @@ const showProducts = (products) => {
       </div>
       <h3 class="text-primary ">${product.title}</h3>
       <p class="text-success">Category: ${product.category}</p>
-      <p class="text-danger"><b>Total Rating : ${product.rating.count}</b></p>
+      <p class="text-primary"><b>Total Rating : ${product.rating.count}</b></p>
       <p class="text-warning"> <b>Rating: ${product.rating.rate} </b></p>
       <h2 class="text-muted">Price: $ ${product.price}</h2>
-      <button onclick="addToCart(${product.id},${product.price})" id="addToCart-btn" class="buy-now btn  btn-warning">add to cart</button>
+      <button onclick="addToCart(${product.id},${product.price})" id="addToCart-btn" class="buy-now btn btn-success">add to cart</button>
       <button id="details-btn" class="btn btn-secondary">Details</button></div>
       `;
     document.getElementById("all-products").appendChild(div);
@@ -45,9 +45,9 @@ const getInputValue = (id) => {
 // main price update function
 const updatePrice = (id, value) => {
   const convertedOldPrice = getInputValue(id);
-  const convar = parseFloat(convertedOldPrice)
+  const convert = parseFloat(convertedOldPrice)
   const convertPrice = parseFloat(value);
-  const total = convar + convertPrice;
+  const total = convert + convertPrice;
   document.getElementById(id).innerText = total.toFixed(2);;
   updateTotal()
 };
